@@ -1,0 +1,31 @@
+# 代理池（含代理账号密码）
+.proxies
+.proxies.*
+
+# 凭据 —— 用通配，不要逐条列举（`.env.bak-xxx` 这类备份一定漏）
+.env
+.env.*
+!.env.example
+
+# 运行产物：台账 / 导出 / 探针输出
+*.json
+*.jsonl
+*.csv
+*.log
+exports/
+
+# 🔴 成功数据（交付物）：含明文 API Key。
+# 必须显式列目录 —— `*.txt` 没有任何通配规则覆盖，
+# 光靠上面的 *.json / *.jsonl 挡不住 result/keys.txt。
+result/
+
+# HAR / EML：含会话与令牌
+*.har
+*.eml
+evidence/
+
+.harx/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
